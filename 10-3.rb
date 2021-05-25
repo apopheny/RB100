@@ -4,22 +4,16 @@
 
 arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-newarr = []
+newarr = arr.select { |odd| odd % 2 == 1 }
 
-newarr = arr.odd? 
-# { |odd|
-#   odd % 2 == 1 << newarr
-# }
 p newarr
 
 =begin 
-one line version
-arr.each { |number| puts number if number > 5 }
+# one line version
+new_array = arr.select { |number| number % 2 != 0 }
 
 # multi-line version
-arr.each do |number|
-  if number > 5
-    puts number
-  end
+new_array = arr.select do |number|
+  number % 2 != 0
 end
 =end
