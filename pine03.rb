@@ -7,13 +7,12 @@ puts "WHADDYA WANT?!?"
 user_input = gets.chomp
 puts "WHADDAYA MEAN \"#{user_input.upcase}\"?!?!?! YER FIRED!!!"
 
-# • Table of contents. Here’s a way for you to play around more with center,
-# ljust, and rjust: write a program that displays a table of contents so that it
-# looks like this:
+# • Table of contents. Here’s a way for you to play around more with center, ljust, and rjust: write a program that displays a table of contents so that it looks like this:
 # ❮ Table of Contents
 # Chapter 1: Numbers page 1
 # Chapter 2: Letters page 5
 # Chapter 3: Variables page 9
+
 line_width = 50
 title = "Table of Contents"
 chap1 = "Chapter 1: Numbers" 
