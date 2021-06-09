@@ -96,9 +96,21 @@ def roman_numeral(arabic_numeral)
   end
 # begin hundreds place
   unless arabic_array_int[-3] != true || arabic_array_int[-3] == 9 || arabic_array_int[-3] == 4 || arabic_array_int[-3] >= 5 && arabic_array_int[-3] <= 8
-    arabic_array_int[-3].times { |ones| print "C" }
+    arabic_array_int[-3].times { |c| print "C" }
   end
-  if arabic_array_int[-3] == 5
+  if arabic_array_int[-3] == 1
+    print "C"
+  end
+  if arabic_array_int[-3] == 2
+    print "CC"
+  end
+  if arabic_array_int[-3] == 3
+    print "CCC"
+  end
+  if arabic_array_int[-3] == 4
+    print "CD"
+  end
+    if arabic_array_int[-3] == 5
     print "D"
   elsif arabic_array_int[-3] == 6 
     print "DC"
@@ -110,14 +122,20 @@ def roman_numeral(arabic_numeral)
   if arabic_array_int[-3] == 9
     print "CM"
   end
-  if arabic_array_int[-3] == 4
-    print "CD"
-  end
+  
 # begin tens place
   unless arabic_array_int[-2] != true || arabic_array_int[-2] == 9 || arabic_array_int[-2] == 4 || arabic_array_int[-2] >= 5 && arabic_array_int[-2] <= 8
-    arabic_array_int[-2].times { |ones| print "X" }
+    arabic_array_int[-2].times { |x| print "X" }
   end
-  if arabic_array_int[-2] == 5
+  if arabic_array_int[-2] == 1
+    print "X" 
+  elsif arabic_array_int[-2] == 2
+    print "XX"
+  elsif arabic_array_int[-2] == 3
+    print "XXX"
+  elsif arabic_array_int[-2] == 4
+    print "XL"
+  elsif arabic_array_int[-2] == 5
     print "L"
   elsif arabic_array_int[-2] == 6 
     print "LX"
@@ -125,13 +143,10 @@ def roman_numeral(arabic_numeral)
     print "LXX"
   elsif arabic_array_int[-2] == 8
     print "LXXX"
-  end 
-  if arabic_array_int[-2] == 9
+  elsif arabic_array_int[-2] == 9
     print "XC"
   end
-  if arabic_array_int[-2] == 4
-    print "XL"
-  end
+  
 # begin ones place
   unless arabic_array_int[-1] == 9 || arabic_array_int[-1] == 4 || arabic_array_int[-1] >= 5 && arabic_array_int[-1] <= 8
     arabic_array_int[-1].times { |ones| print "I" }
