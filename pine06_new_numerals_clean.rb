@@ -62,7 +62,7 @@ CODE
 def roman_numeral(arabic_numeral)
   arabic_array = arabic_numeral.to_s.split(//)
   arabic_array_int = arabic_array.map { |int| int.to_i }
-  if arabic_array.length >= 8
+   if arabic_array.length >= 8
     puts ">> This feature only supports numbers up to 9,999,999, as the unicode for Roman numerals above 1,000 is not universally displayable. Please enter a positive whole number less than 10,000,000:"
     arabic_numeral = gets.to_i
     roman_numeral(arabic_numeral)
@@ -82,7 +82,7 @@ def roman_numeral(arabic_numeral)
 # begin hundred thousands place
   if arabic_array_int[-6] != nil
     hundred_thousands = arabic_array_int[-6] * 100
-    hundred_thousands.times { |mmm| print "M"}
+    hundred_thousands.times { |mmm| print "M" }
   end
 # begin ten thousands place
   if arabic_array_int[-5] != nil
@@ -95,16 +95,16 @@ def roman_numeral(arabic_numeral)
     m.times { |m| print "M" }
   end
 # begin hundreds place
-  unless arabic_array_int[-3] == 9 || arabic_array_int[-3] == 4 || arabic_array_int[-3] >= 5 && arabic_array_int[-3] <= 8
-    arabic_array_int[-3].times { |ones| print "C"}
+  unless arabic_array_int[-3] != true || arabic_array_int[-3] == 9 || arabic_array_int[-3] == 4 || arabic_array_int[-3] >= 5 && arabic_array_int[-3] <= 8
+    arabic_array_int[-3].times { |ones| print "C" }
   end
   if arabic_array_int[-3] == 5
     print "D"
   elsif arabic_array_int[-3] == 6 
     print "DC"
-  elsif arabic_array_int[-2] == 7
+  elsif arabic_array_int[-3] == 7
     print "DCC"
-  elsif arabic_array_int[-2] == 8
+  elsif arabic_array_int[-3] == 8
     print "DCCC"
   end 
   if arabic_array_int[-3] == 9
@@ -114,8 +114,8 @@ def roman_numeral(arabic_numeral)
     print "CD"
   end
 # begin tens place
-  unless arabic_array_int[-2] == 9 || arabic_array_int[-2] == 4 || arabic_array_int[-2] >= 5 && arabic_array_int[-2] <= 8
-    arabic_array_int[-2].times { |ones| print "X"}
+  unless arabic_array_int[-2] != true || arabic_array_int[-2] == 9 || arabic_array_int[-2] == 4 || arabic_array_int[-2] >= 5 && arabic_array_int[-2] <= 8
+    arabic_array_int[-2].times { |ones| print "X" }
   end
   if arabic_array_int[-2] == 5
     print "L"
@@ -134,7 +134,7 @@ def roman_numeral(arabic_numeral)
   end
 # begin ones place
   unless arabic_array_int[-1] == 9 || arabic_array_int[-1] == 4 || arabic_array_int[-1] >= 5 && arabic_array_int[-1] <= 8
-    arabic_array_int[-1].times { |ones| print "I"}
+    arabic_array_int[-1].times { |ones| print "I" }
   end
   if arabic_array_int[-1] == 5
     print "V"
@@ -155,7 +155,7 @@ def roman_numeral(arabic_numeral)
 print "\n"
 end
 
-puts ">> Enter a positive whole number to convert to old Roman numerals:"
+puts ">> Enter a positive whole number to convert to old Roman numerals (all decimals will be rounded DOWN):"
 arabic_numeral = gets.to_i
 
 loop do
